@@ -1,0 +1,1200 @@
+/* ===== BASE STYLES ===== */
+:root {
+  --primary: #0066cc;
+  --primary-dark: #004d99;
+  --secondary: #000000;
+  --accent: #ffffff;
+  --text: #333333;
+  --light-bg: #f5f5f5;
+  --dark-bg: #1a1a1a;
+  --gray: #777777;
+  --light-gray: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: var(--accent);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--accent);
+}
+
+
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--secondary);
+  color: var(--accent);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 30px;
+}
+
+.nav-link {
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+/* Mobile Menu Button - Hidden by default */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile Menu - Hidden by default */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background: var(--secondary);/* dark transparent overlay */
+  z-index: 1001;
+  transition: right 0.3s ease;
+  padding: 20px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu.show {
+  right: 0;
+}
+
+.close-menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-nav-menu {
+  list-style: none;
+  margin-top: 50px;
+}
+
+.mobile-nav-menu .nav-item {
+  margin: 15px 0;
+}
+
+.mobile-nav-menu .nav-link {
+  color: var(--accent);
+  font-size: 1.1rem;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Show mobile menu button and hide regular nav on small screens */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+}
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://th.bing.com/th/id/R.0a86911db56ab793d869fd554220c33a?rik=4m2KwJaNOTy%2fgg&riu=http%3a%2f%2falogvinov.com%2fwp-content%2fuploads%2f2013%2f11%2fneed-for-speed-rivals-bugatti-veyron.jpg&ehk=FY%2ffLt4h9MRhKcMJxGa9RNorwoYJe4%2bPbzWOLASAC4U%3d&risl=&pid=ImgRaw&r=0');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--accent);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* ===== GAMING MACHINES ===== */
+.machines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.machine-card {
+  background: var(--accent);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.machine-card:hover {
+  transform: translateY(-10px);
+}
+
+.machine-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.machine-info {
+  padding: 20px;
+}
+
+.machine-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Video Container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* ===== TOURNAMENTS ===== */
+.tournaments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.tournament-card {
+  background: var(--accent);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tournament-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.tournament-info {
+  padding: 20px;
+}
+
+.tournament-date {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.tournament-prize {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--secondary);
+  color: var(--accent);
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-link {
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: var(--primary);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray);
+}
+
+/* ===== LOGIN/REGISTER FORMS ===== */
+
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: calc(100vh - 80px);
+}
+
+.sidebar {
+  background: var(--secondary);
+  color: var(--accent);
+  padding: 30px;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 12px 0;
+  transition: color 0.3s;
+}
+
+.sidebar-link:hover {
+  color: var(--primary);
+}
+
+.dashboard-content {
+  padding: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: var(--accent);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide sidebar on small screens and add toggle button behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: #1e1e2f;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1101;
+    font-size: 24px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dashboard-content {
+    padding-left: 0;
+  }
+}
+
+/* ===== TOURNAMENTS PAGE ===== */
+.tournament-filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-weight: 600;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+}
+
+/* ===== TOURNAMENT DETAILS ===== */
+.tournament-hero {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.tournament-hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tournament-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--accent);
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.tournament-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.tournament-meta {
+    display: flex;
+    gap: 20px;
+}
+
+.tournament-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.tournament-rules {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.tournament-rules li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.prize-structure {
+    margin: 20px 0;
+}
+
+.prize-tier {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.register-box {
+    background: var(--accent);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.countdown-timer {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+.participants-list {
+    margin-top: 15px;
+}
+
+.participant {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.participant img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+/* === MOBILE STYLES === */
+@media screen and (max-width: 768px) {
+  .tournament-content {
+    flex-direction: column;
+  }
+
+  .tournament-main,
+  .tournament-sidebar {
+    width: 100%;
+  }
+
+  .tournament-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tournament-hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  .tournament-meta span {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .register-box,
+  .participants-box {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .btn-register {
+    font-size: 1.2rem;
+    padding: 12px 0;
+  }
+
+  .timer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .time-unit {
+    font-size: 1.2rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  p, span, li {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+/* Default styling for big screens */
+.countdown-timer {
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* On small screens (like phones), make it more compact */
+@media (max-width: 600px) {
+  .countdown-timer {
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .countdown-timer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+  }
+
+  .countdown-timer div span.label {
+    font-size: 12px;
+  }
+}
+
+
+
+/* ===== MEMBERSHIP PAGE ===== */
+.membership-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.tier-card {
+    background: var(--accent);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.tier-card.featured {
+    border: 2px solid var(--primary);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--primary);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tier-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tier-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.tier-price span {
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.tier-features {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.tier-features li {
+    padding: 8px 0;
+}
+
+.tier-features .fa-check {
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+.tier-features .fa-times {
+    color: var(--gray);
+    margin-right: 10px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* ===== LEADERBOARD PAGE ===== */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+.leaderboard-table th, 
+.leaderboard-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.leaderboard-table th {
+    background: var(--primary);
+    color: var(--accent);
+}
+
+.player-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-cell img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.leaderboard-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.btn-pagination {
+    background: var(--primary);
+    color: var(--accent);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.point-system {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.point-system li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/* ===== GALLERY PAGE ===== */
+.gallery-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: var(--accent);
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: var(--accent);
+    border-color: var(--primary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--accent);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-card {
+    background: var(--accent);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.contact-form {
+    background: var(--accent);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+}
+
+.contact-map {
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== PASSWORD RECOVERY ===== */
+.auth-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--gray);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ===== LEGAL PAGES ===== */
+.legal-page .page-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 40px;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-content section {
+    margin-bottom: 40px;
+}
+
+.legal-content h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.legal-content ul {
+    list-style-position: inside;
+    margin-top: 15px;
+}
+
+.legal-content li {
+    margin-bottom: 10px;
+}
+
+/* ===== EVENTS PAGE ===== */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.event-card {
+    display: flex;
+    background: var(--accent);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.event-date {
+    background: var(--primary);
+    color: var(--accent);
+    padding: 20px;
+    text-align: center;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-date .day {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.event-time {
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+.event-desc {
+    margin: 15px 0;
+    color: var(--gray);
+}
+
+.event-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.event-button {
+    align-self: center;
+    padding: 0 20px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.past-events {
+    margin-top: 60px;
+}
+
+.past-events h3 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.past-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.past-event-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.past-event-card img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.past-event-info {
+    padding: 15px;
+}
+
+.past-event-info h4 {
+    margin-bottom: 5px;
+}
+
+.past-event-info p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.btn-link {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ===== FAQ PAGE ===== */
+.faq-categories {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 8px 20px;
+    background: var(--accent);
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.category-btn.active {
+    background: var(--primary);
+    color: var(--accent);
+    border-color: var(--primary);
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    background: var(--accent);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+}
+
+.faq-answer.active {
+    padding: 0 20px 20px;
+    max-height: 500px;
+}
+
+.faq-contact {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+}

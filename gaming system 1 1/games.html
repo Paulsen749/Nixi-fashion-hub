@@ -1,0 +1,149 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Gaming Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .icon-item {
+      transition: transform 0.3s;
+    }
+
+    .icon-item:hover {
+      transform: scale(1.08);
+    }
+
+    .icon-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .icon-item span {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- Card Section -->
+  <section class="section" id="games">
+    <h2 class="section-title">Popular Gaming Platforms</h2>
+    <div class="machines-grid container">
+
+      <div class="machine-card">
+        <img src="games/fortinite.jpg" class="machine-img" alt="Fortnite" />
+        <div class="machine-info">
+          <h3 class="machine-title">Fortnite</h3>
+          <a href="https://www.epicgames.com/fortnite" class="btn btn-secondary" target="_blank">Visit</a>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <img src="games/call of duty.jpeg"  alt="Call of Duty" />
+        <div class="machine-info">
+          <h3 class="machine-title">Call of Duty</h3>
+          <a href="https://www.callofduty.com" class="btn btn-secondary" target="_blank">Visit</a>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <img src="games/valorant2.jpg" class="machine-img" alt="Valorant" />
+        <div class="machine-info">
+          <h3 class="machine-title">Valorant</h3>
+          <a href="https://playvalorant.com" class="btn btn-secondary" target="_blank">Visit</a>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <img src="games/pubg.jpg" class="machine-img" alt="PUBG" />
+        <div class="machine-info">
+          <h3 class="machine-title">PUBG</h3>
+          <a href="https://pubg.com" class="btn btn-secondary" target="_blank">Visit</a>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <img src="games/league.jpg" class="machine-img" alt="League of Legends" />
+        <div class="machine-info">
+          <h3 class="machine-title">League of Legends</h3>
+          <a href="https://www.leagueoflegends.com" class="btn btn-secondary" target="_blank">Visit</a>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <img src="games/minicraft.jpg" class="machine-img" alt="Minecraft" />
+        <div class="machine-info">
+          <h3 class="machine-title">Minecraft</h3>
+          <a href="https://minecraft.net" class="btn btn-secondary" target="_blank">Visit</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+</body>
+</html>
+
+  <!-- Platforms Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Fast Access Platforms</h2>
+      <div class="icon-grid">
+        <!-- Example with local image -->
+        <a href="https://www.crazygames.com" target="_blank" class="icon-item">
+          <img src="games/crazygames.png" alt="CrazyGames">
+          <span>CrazyGames</span>
+        </a>
+
+        <!-- Example with local image -->
+        <a href="https://poki.com" target="_blank" class="icon-item">
+          <img src="games/poki.png" alt="Poki">
+          <span>Poki</span>
+        </a>
+
+        <!-- Example with local image -->
+        <a href="https://www.miniclip.com" target="_blank" class="icon-item">
+          <img src="games/miniclip.png" alt="Miniclip">
+          <span>Miniclip</span>
+        </a>
+
+        <!-- Example with local image -->
+        <a href="https://www.roblox.com" target="_blank" class="icon-item">
+          <img src="games/roblox.png" alt="Roblox">
+          <span>Roblox</span>
+        </a>
+
+        <!-- Example with local image -->
+        <a href="https://store.steampowered.com" target="_blank" class="icon-item">
+          <img src="games/steam.png" alt="Steam">
+          <span>Steam</span>
+        </a>
+
+        <!-- Example with local image -->
+        <a href="https://www.epicgames.com/store/en-US/" target="_blank" class="icon-item">
+          <img src="games/epicgames.png" alt="Epic Games">
+          <span>Epic Games</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+</body>
+</html>

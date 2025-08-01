@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3DMGAME Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Welcome <span>Player</span></h2>
+      <p class="tagline">Login and get caught up.</p>
+      <p class="quote">This is his painting "Ghost Knife" series, and I liked him with this sense of style</p>
+      <button class="view-more">VIEW MORE</button>
+    </div>
+
+    <div class="right-panel">
+      <h3>Login to enter your dashboard</h3>
+      <form onsubmit="event.preventDefault(); window.location.href='undone.html';">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">LOGIN</button>
+        <div class="form-footer">
+          <p>Don't have account? <a href="membership.html">Register</a></p>
+        </div>
+      </form>
+      <footer>©Most Wanted Elite Gaming Pub </footer>
+    </div>
+  </div>
+</body>
+</html>

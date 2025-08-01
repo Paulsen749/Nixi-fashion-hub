@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Most Wanted Elite Gaming Pub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Welcome <span>Player</span></h2>
+      <p class="tagline">Register and get caught up.</p>
+      <p class="quote">This is his painting "Ghost Knife" series, and I liked him with this sense of style</p>
+      <a href="gallery.html"><button class="view-more">VIEW MORE</button></a>
+    </div>
+
+    <div class="right-panel">
+      <h3>Register</h3>
+      <form onsubmit="event.preventDefault(); window.location.href='undone.html';">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+       
+        <div class="form-group">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">I agree to the <a href="terms.html">Terms of Service</a></label>
+        </div>
+        
+        <button type="submit" class="btn">Register</button>
+        
+        <div class="form-footer">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </form>
+      <footer>©Most Wanted Elite Gaming Pub </footer>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Details | Most Wanted Elite Gaming Pub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    
+    <main class="tournament-details-page">
+        <section class="section">
+            <div class="container">
+                <div class="tournament-hero">
+                    <img src="games/call of duty.jpeg" alt="Tournament Banner">
+                    <div class="tournament-hero-content">
+                        
+                        <div class="tournament-meta">
+                            <span><i class="fas fa-calendar-alt"></i>December , 2025 • 1:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> You will be informed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tournament-content">
+                    <div class="tournament-main">
+                        <h2>Tournament Details</h2>
+                        <p>Join us for our Call of Duty hunt down tournament where players compete for cash prizes and bragging rights. This single-elimination tournament will test your skills against the best players in the city.</p>
+                        
+                        <h3>Rules & Format</h3>
+                        <ul class="tournament-rules">
+                            <li>Single elimination bracket</li>
+                            
+                            <li>World Class difficulty</li>
+                            <li>Random team selection</li>
+                            <li>No custom formations</li>
+                        </ul>
+                        
+                        <h3>More information will be</h3>
+                        <p>Provided in groups</p>
+                        <div class="prize-structure">
+                            <div class="prize-tier">
+                                <span class="prize-place">1st Place </span>
+                                <span class="prize-amount">will be granted the prize</span>
+                            </div>
+                            <div class="prize-tier">
+                                <span class="prize-place">2nd Place</span>
+                                <span class="prize-amount">UGX ???</span>
+                            </div>
+                            <div class="prize-tier">
+                                <span class="prize-place">3rd Place</span>
+                                <span class="prize-amount">UGX ???</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tournament-sidebar">
+                        <div class="register-box">
+                            <h3>Buy your ticket now!!!!</h3>
+                            <div class="register-details">
+                                <p><strong>Ticket</strong> UGX 15,000</p>
+                                <p><strong>Spots Available:</strong> 8/30</p>
+                                 <div class="countdown">
+                        <h4>Registration closes in:</h4>
+                
+<style>
+    
+
+    .countdown {
+      text-align: center;
+      background: #e4e7eb; /* dark transparent overlay */
+      color: black;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    }
+
+    .countdown h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .timer {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .time-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .label {
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+  </style>
+
+  <div class="countdown">
+    <div class="timer" id="timer">
+      <div class="time-unit">
+        <span id="days">00</span>
+        <div class="label">Days</div>
+      </div>
+      <div class="time-unit">
+        <span id="hours">00</span>
+        <div class="label">Hours</div>
+      </div>
+      <div class="time-unit">
+        <span id="minutes">00</span>
+        <div class="label">Minutes</div>
+      </div>
+      <div class="time-unit">
+        <span id="seconds">00</span>
+        <div class="label">Seconds</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const countdownDate = new Date("December 30, 2025 00:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerHTML = "🚀 Launched!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days.toString().padStart(2, '0');
+      document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }, 1000);
+  </script>
+
+
+                                
+                          <a href="payement.html"> <button class="btn btn-register">Buy Ticket</button> </a>
+                            
+                        </div>
+                        
+                        <div class="participants-box">
+                            <h3>Registered Players</h3>
+                            <div class="participants-list">
+                                <div class="participant">
+                                    
+                                </div>
+                                <!-- More participants -->
+                                 <div class="participants-box">
+                            <div class="participants-list">
+                                <div class="participant">
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (same as index.html) -->
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

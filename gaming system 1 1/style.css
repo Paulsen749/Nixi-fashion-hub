@@ -1,0 +1,120 @@
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #144773, #4facfe);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 800px;
+  height: 460px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Left panel */
+.left-panel {
+  width: 50%;
+  background: url('games/istockphoto-1287493962-612x612.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 40px 30px;
+  position: relative;
+}
+
+.left-panel h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.left-panel h2 span {
+  color: #00bfff;
+}
+.left-panel .tagline {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+.left-panel .quote {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+.left-panel .view-more {
+  padding: 10px 25px;
+  border: none;
+  background: #00bfff;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.left-panel .view-more:hover {
+  background: #0099cc;
+}
+
+/* Right panel */
+.right-panel {
+  width: 50%;
+  background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-panel h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: white;
+  color: #2193b0;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #e6e6e6;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+

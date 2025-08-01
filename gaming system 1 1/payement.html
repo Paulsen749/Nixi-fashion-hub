@@ -1,0 +1,148 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Airtel QR Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #d00000, #ff4d4d);
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+      overflow: hidden;
+      width: 90%;
+      max-width: 800px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @media(min-width: 600px) {
+      .wrapper {
+        flex-direction: row;
+      }
+    }
+
+    .left, .right {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left {
+      background-color: #fff5f5;
+      border-right: 1px solid #eee;
+    }
+
+    .left h2 {
+      color: #d00000;
+      margin-bottom: 20px;
+    }
+
+    .left img {
+      width: 180px;
+      height: 180px;
+    }
+
+    .left p {
+      margin-top: 15px;
+      color: #d00000;
+      font-size: 13px;
+    }
+
+    .right label {
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #d00000;
+      align-self: flex-start;
+    }
+
+    .right input {
+      padding: 10px;
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .ussd-button {
+      background: #d00000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .ussd-button:hover {
+      background: #a30000;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Left Side: QR Code -->
+    <div class="left">
+      <h2>Airtel Pay</h2>
+      <img id="qrImage" src="" alt="QR Code">
+      <p>⚠️ This currently works on phones</p>
+      <p>⚠️ Make a phone call after the Payment on : 0745903917</p>
+    </div>
+
+    <!-- Right Side: Form -->
+    <div class="right">
+      <label for="merchant">Merchant ID</label>
+      <input type="text" id="merchant" value="6854847" readonly>
+
+      <label for="reference">Reference Number</label>
+      <input type="text" id="reference" value="745903917" readonly>
+
+      <a id="ussdLink" class="ussd-button" href="#">Dial Now</a>
+    </div>
+  </div>
+
+  <script>
+    const merchant = document.getElementById("merchant").value;
+    const reference = document.getElementById("reference").value;
+    const ussdCode = `*185*9*1*${merchant}*${reference}#`;
+
+    // Load QR code from GoQR
+    const qrImage = document.getElementById("qrImage");
+    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(ussdCode)}&size=200x200`;
+
+    // Tap-to-dial
+    const ussdLink = document.getElementById("ussdLink");
+    ussdLink.href = `tel:${encodeURIComponent(ussdCode)}`;
+  </script>
+</body>
+</html>

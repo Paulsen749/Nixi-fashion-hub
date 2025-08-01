@@ -1,0 +1,175 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Most Wanted Elite Gaming Pub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Add these styles to your CSS or style section */
+    .mobile-menu-btn {
+      display: none;
+      background: #000000;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      border-radius: 5px;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        background: #1a1a2e;
+      }
+      
+      .sidebar.active {
+        left: 0;
+      }
+      
+      .dashboard-content {
+        margin-left: 0;
+      }
+      
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 998;
+      }
+      
+      .overlay.active {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile menu button -->
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <!-- Overlay for mobile menu -->
+  <div class="overlay" id="overlay"></div>
+  
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+      <div class="profile">
+        <img id="user-avatar" src="images/avatar.jpg"
+             style="width: 100px; border-radius: 50%; cursor: pointer;" onclick="openAvatarModal()">
+        <input type="file" id="avatar-input" accept="image/*" style="margin-top: 10px;">
+        <button onclick="uploadAvatar()" style="margin-top: 5px;">Update Avatar</button>
+        <h3>Username</h3>
+        <p>Member since: Jan 2023</p>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li><a href="dashboard.html" class="sidebar-link active"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="events.html" class="sidebar-link"><i class="fas fa-star"></i> Events</a></li>
+        <li><a href="tournaments.html" class="sidebar-link"><i class="fas fa-trophy"></i> Tournaments</a></li>
+        <li><a href="leaderboard.html" class="sidebar-link"><i class="fas fa-users"></i> Leaderboard</a></li>
+        <li><a href="index.html" class="sidebar-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      <h1>Welcome Back, Player</h1>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Tournaments Joined</h3>
+          <p>12</p>
+        </div>
+        <div class="stat-card">
+          <h3>Current Rank</h3>
+          <p>#8</p>
+        </div>
+        <div class="stat-card">
+          <h3>Total Winnings</h3>
+          <p>UGX 120,000</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Avatar Modal -->
+  <div id="avatar-modal" style="display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8); align-items: center; justify-content: center;">
+    <span onclick="closeAvatarModal()" style="position: absolute; top: 20px; right: 40px; font-size: 40px; color: white; cursor: pointer;">&times;</span>
+    <img id="modal-avatar" src="" style="max-width: 90%; max-height: 90%; border-radius: 10px;">
+  </div>
+
+  <script>
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+    
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+    
+    // Existing avatar functions
+    function uploadAvatar() {
+      const fileInput = document.getElementById('avatar-input');
+      const avatarImg = document.getElementById('user-avatar');
+      const file = fileInput.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          avatarImg.src = e.target.result;
+          localStorage.setItem('userAvatar', e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedAvatar = localStorage.getItem('userAvatar');
+      if (savedAvatar) {
+        document.getElementById('user-avatar').src = savedAvatar;
+      }
+    });
+
+    function openAvatarModal() {
+      const avatarSrc = document.getElementById('user-avatar').src;
+      document.getElementById('modal-avatar').src = avatarSrc;
+      document.getElementById('avatar-modal').style.display = 'flex';
+    }
+
+    function closeAvatarModal() {
+      document.getElementById('avatar-modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

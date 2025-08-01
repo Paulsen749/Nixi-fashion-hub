@@ -1,0 +1,219 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Most Wanted Elite Gaming Pub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <img src="games/logo.jpg" alt="Most Wanted Logo" class="logo">
+
+      <!-- Add this right after your logo in the header -->
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Add this right before the closing </body> tag -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu-btn" id="closeMenuBtn">
+    <i class="fas fa-times"></i>
+  </button>
+  <ul class="mobile-nav-menu">
+    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+    <li class="nav-item"><a href="tournaments.html" class="nav-link">Tournaments</a></li>
+    <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
+    <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
+  </ul>
+</div>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="tournaments.html" class="nav-link">Tournaments</a></li>
+        <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
+        <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
+      </ul>
+    </div>
+  </header>
+<script>
+ // Replace both functions with this single version
+function toggleMenu() {
+  const menu = document.getElementById("rightMenu");
+  if (menu.style.width === "250px" || menu.style.width === "80%") {
+    menu.style.width = "0";
+  } else {
+    menu.style.width = window.innerWidth > 768 ? "250px" : "80%";
+  }
+}
+
+
+// Mobile menu functionality - improved version
+document.addEventListener('DOMContentLoaded', function() {
+  // Get elements with null checks
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  
+  // Only proceed if elements exist
+  if (!mobileMenuBtn || !mobileMenu || !closeMenuBtn) {
+    console.error('Mobile menu elements not found');
+    return;
+  }
+
+  // Toggle menu function
+  function toggleMenu() {
+    mobileMenu.classList.toggle('show');
+    document.body.style.overflow = mobileMenu.classList.contains('show') ? 'hidden' : '';
+  }
+
+  // Event listeners
+  mobileMenuBtn.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent event from bubbling to document
+    toggleMenu();
+  });
+
+  closeMenuBtn.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (mobileMenu.classList.contains('show') && 
+        !mobileMenu.contains(e.target) && 
+        e.target !== mobileMenuBtn) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu when pressing Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+      toggleMenu();
+    }
+  });
+});
+</script>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">MOST WANTED<br>ELITE GAMING PUB</h1>
+        <p>Dominate the game,rule the arena</p>
+        <div class="hero-buttons">
+          <a href="tournaments.html" class="btn">Join Tournament</a>
+          <a href="membership.html" class="btn btn-secondary">Become Member</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section class="videos-section">
+    <div class="container">
+       <h2 class="section-title">Game <span class="highlight">Trailers</span></h2>
+      
+     <div class="video-container">
+  <iframe src="https://www.youtube.com/embed/i9caaWdJpGE" title="PS5 - Official Local Multiplayer Games Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/h0uxvKUjsj4" title="Call of Duty: Black Ops 6 - Global Launch Gameplay Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+  </section>
+
+  <!-- Tournaments Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Upcoming <span class="highlight">Tournaments</span></h2>
+      
+      <div class="tournaments-grid">
+        <div class="tournament-card">
+          <img src="images/tournament1.jpg" alt="FIFA Tournament" class="tournament-img">
+          <div class="tournament-info">
+            <p class="tournament-date">Friday, March 15</p>
+            <h3>FIFA 25 Championship</h3>
+             <p class="tournament-prize"><i class="fab fa-gift"></i>Hidden prize pool</p>
+             <a href="tournament-details.html" class="btn">View Details</a>
+          </div>
+        </div>
+
+        <div class="tournament-card">
+          <div class="tournament-info">
+            <p class="tournament-date">Saturday, March 16</p>
+            <h3>Blur Championship</h3>
+            <p class="tournament-prize"><i class="fab fa-gift"></i>Hidden prize pool</p>
+            <a href="blur-details.html" class="btn">View Details</a>
+          </div>
+        </div>
+
+         <div class="tournament-card">
+          <div class="tournament-info">
+            <p class="tournament-date">December </p>
+            <h3>Mortal kombat</h3>
+            <p class="tournament-prize"><i class="fab fa-gift"></i>Hidden prize pool</p>
+            <a href="mortalkombat.html" class="btn">View Details</a>
+          </div>
+        </div>
+
+         <div class="tournament-card">
+          <div class="tournament-info">
+            <p class="tournament-date">December</p>
+            <h3>Call of Duty</h3>
+            <p class="tournament-prize"><i class="fab fa-gift"></i>Hidden prize pool</p>
+            <a href="callof duty.html" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="games/logo.jpg" alt="Logo" class="footer-logo">
+          <p>Where Champions Are Made</p>
+        </div>
+        
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tournaments.html">Tournaments</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-title">Contact</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</li>
+            <li><i class="fas fa-phone"></i> +256 745 903917</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="https://www.youtube.com/channel/UCYxa6xHdaObMWot6Plphx3A"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/most.wantedelitegamingpub?igsh=MWR5NGc4aGo3OTBldQ=="><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@user8109213056394"><i class="fab fa-tiktok"></i></a>
+            <a href="https://chat.whatsapp.com/I2PxdthNseoJH05zkN4NJY"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <p class="copyright">&copy; 2025 Most Wanted Elite Gaming Pub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
