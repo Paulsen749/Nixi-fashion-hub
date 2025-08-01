@@ -1,2 +1,2 @@
-# Nixi-fashion-hub
-Clothing
+# Most Wanted Elite Gaming Pub
+Gaming
